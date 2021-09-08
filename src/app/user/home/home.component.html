@@ -1,0 +1,54 @@
+<p>home works!</p>
+<form action="" (ngSubmit)="save()" #myform="ngForm" style="padding-left: 30px;">
+    <div class="col-md-4 mb-3">
+    <label for="" class="col-sm-2 col-form-label">Username</label>
+    <div>
+        <input  placeholder="Username" class="form-control is-valid" type="text" name="name" [(ngModel)]=home.name>
+    </div>
+    </div>
+<div class="col-md-4 mb-3">
+    <label for="" class="col-sm-2 col-form-label">Password</label>
+    <div>
+        <input placeholder="Password" class="form-control is-valid" type="password" name="password" [(ngModel)]=home.password>
+    </div>
+</div>
+    <div class="col-md-4 mb-3">
+    <label for="" class="col-sm-2 col-form-label">Email</label>
+    <div>
+        <input placeholder="Email" class="form-control is-valid" type="email" name="email" [(ngModel)]=home.email>
+    </div>
+</div>
+    <div class="col-md-4 mb-3">
+    <label for="" class="col-sm-2 col-form-label">Mobile</label>
+    <div>
+        <input placeholder=" Mobile Number" class="form-control is-valid" type="number" name="mobile" [(ngModel)]=home.mobile>
+    </div>
+</div>
+    <button type="button" class="btn btn-outline-primary" (click)='save()'>Save</button>
+    <button type="button" class="btn btn-outline-primary" (click)='logout()'>Logout</button>
+</form>
+    <style>
+        table,th,td{border: 1px solid black;border-collapse: collapse;padding-left: 15px; }
+    </style><br>
+<table class="table">
+    <thead class="thead-dark">
+    <th>ID</th>
+    <th>Username</th>
+    <th>password</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Edit</th>
+    <th>Delete</th>
+</thead>
+    <tr *ngFor="let arr of userlist">
+        <td>{{arr.id}}</td>
+        <td>{{arr.name}}</td>
+        <td>{{arr.password}}</td>
+        <td>{{arr.email}}</td>
+        <td>{{arr.mobile}}</td>
+        <td style="padding: auto;">
+            <button (click)="edit(arr)"class="btn btn-success">Edit</button>
+        </td>
+        <th style="padding: auto;"><button (click)="delete(arr)" class="btn btn-success">Delete</button></th>
+    </tr>
+</table>
